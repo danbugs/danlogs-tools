@@ -1,0 +1,11 @@
+fn main() {
+    println!("hello, world!");
+}
+
+fn main() {
+    let _dan = "dan"; // comment
+    // comment by itself
+
+    println!("hello, world!");
+}
+
