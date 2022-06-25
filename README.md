@@ -5,8 +5,9 @@ This is a repository to group tools for making the process of creating videos fo
 ## danlogs Script Lexer and Splitter (dsls)
 
 ```sh
+❯ dsls --help
 danlogs-tools 0.1.0
-Dan Chiarlone <danilochiarlone@hotmail.com>
+Dan Chiarlone
 A lexer and splitter (i.e., splitting between script and code files) for the stuff I write while
 preparing videos for my YouTube channel — danlogs
 
