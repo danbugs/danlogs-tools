@@ -4,8 +4,8 @@ use anyhow::{Context, Result};
 use clap::Parser;
 use danlogs_tools::lexer_splitter::lex_and_split;
 
-/// danlogs Script Lexer and Splitter (or, DSLS) is a tool for 
-/// lexing (i.e., breaking input into tokens) and then splitting 
+/// danlogs Script Lexer and Splitter (or, DSLS) is a tool for
+/// lexing (i.e., breaking input into tokens) and then splitting
 /// (i.e., between script and code files) the document I usually
 /// write while preparing a video for my YouTube channel (danlogs).
 #[derive(Parser, Debug)]

@@ -76,13 +76,14 @@ where
             .next()
             .ok_or_else(|| anyhow::anyhow!("code block was never closed"))??;
         if code_line.contains("```") {
+            code_file.write_all(b"---\n")?; // indicator of end of code block
             break;
         }
         match classify_code_line(&code_line) {
             CodeToken::Line => {
                 code_file.write_all(code_line.as_bytes())?;
                 writeln!(code_file)?;
-            },
+            }
             CodeToken::Comment => {
                 script_file.write_all(code_line.trim().as_bytes())?;
                 writeln!(script_file)?;
@@ -106,7 +107,7 @@ fn classify_code_line(line: &str) -> CodeToken {
     } else if line.trim().contains("//") {
         let comment_starts_at = line.find("//").unwrap();
         // ^^^ this can't fail, so we're ok with this unwrap
-        CodeToken::LineWithComment(&line, &line[comment_starts_at..])
+        CodeToken::LineWithComment(line, &line[comment_starts_at..])
     } else {
         CodeToken::Line
     }

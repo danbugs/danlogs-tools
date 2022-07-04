@@ -1,5 +1,5 @@
 # This is a H1 Title
-This is some text.
+This is a test script file. You can run make test to see the script and code files you get of off it.
 
 ## This is a H2 Title
 This is some text again.
